@@ -6,6 +6,9 @@ var all_posts = [];
 var last_modified = null;
 
 var fetch_all_posts = function(callback) {
+	//reset posts list
+	blog_content_handler.allPosts = {};
+
 	blog_content_handler.getAllPosts(function(err, posts_obj, posts_last_modified) {
 		if (!err) {
 			all_posts = _.values(posts_obj);
