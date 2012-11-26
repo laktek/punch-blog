@@ -42,11 +42,11 @@ Also, you can use any other features available in Punch.
 
 ## How to use
 
-* [Download]() & extract the code.
+* [Download](https://github.com/laktek/punch-blog/archive/master.zip) & extract the code.
 
 * Inside the project's root directory, run `npm install`.
 
-* Set the blog details in `contents/shared.json`.
+* Set the details of the blog in `contents/shared.json`.
 
 * Open `config.json` and change the settings as you prefer.
 
