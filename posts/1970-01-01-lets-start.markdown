@@ -37,11 +37,11 @@ You can set any blog specific settings under the section `blog` in the `config.j
 
 Punch-blog uses [Prism.js](http://prismjs.com/) for automatic syntax highlighting. There are several other nifty features like that on Punch-blog. Here's a full list: 
 
-* Preview your post, as you write it.
+* Preview posts, as you write them.
 * Easily publish to Amazon S3.
-* Pretty URLs for permalinks (configurable).
+* Pretty URLs for permalinks (no .html, configurable).
 * Responsive, customizable theme based on [HTML5Boilerplate](html5boilerplate.com) & [320andup framework](https://github.com/malarkey/320andup/).
-* Load fonts from mulitple soruces with [WebFonts Loader](https://github.com/typekit/webfontloader).
+* Load fonts from multiple sources with [WebFonts Loader](https://github.com/typekit/webfontloader).
 * Easily configure Google Analytics, Tweet button & Disqus comments.
 * Highlighting the current page link.
 * Post archives by tags.
@@ -53,9 +53,10 @@ Punch-blog uses [Prism.js](http://prismjs.com/) for automatic syntax highlightin
 * RSS feed 
 * Sitemap.xml
 
-And all other features in Punch!
+Also, you can use any other features available in Punch.
+
 * Manage other pages with Punch's default content handler.
-* Extend the behaviour by writing your own helpers.
+* Extend the behavior by writing your own helpers.
 
 This is so sexy and awesome right? Yes, just like the Gangnam style:
 
