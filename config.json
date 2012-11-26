@@ -1,0 +1,92 @@
+{
+	"template_dir": "templates", 
+	"content_dir": "contents",
+	"output_dir": "public",
+
+	"server": { 
+		"port": 9009
+	},
+
+	"bundles": {
+		"/js/all.js": [
+			"/js/vendor/prism.js",		
+			"/js/plugins.js",
+			"/js/main.js"
+		],
+		"/css/main.css": [
+			"/css/less/main.less"	
+		]
+	},
+
+	"generator": {
+		"skip_paths": ["/css/less/*"]
+	},
+
+	"blog": {
+		"posts_dir": "posts",
+		"post_format": "markdown",	
+		"post_url": "/{year}/{month}/{date}/{title}",
+		"teaser_length": 2,
+		"homepage_posts": 10,
+
+		"archive_urls": {
+			"all": "/archive",
+			"year": "/{year}",
+			"year_month": "/{year}/{month}",
+			"year_month_date": "/{year}/{month}/{date}",
+			"tag": "/tag/{tag}"
+		}
+	},
+
+	"thirdparty_snippets": {
+		"google_analytics": {
+			"property_id": "UA-xxxxxx-x"
+		},
+
+		"web_fonts": {
+			"google": {
+				"families": [ "Source Code Pro:400,700", "Source Sans Pro:400,700,400italic", "Titillium+Web:400,600"]
+			}
+		},
+
+		"disqus": {
+			"shortname": "my-name"	
+		},
+
+		"tweet_button": {
+			"via": "myname"
+		}
+	},
+
+	"sitemap_generator": {
+		"url_root": "http://www.myblog.com"	
+	},
+
+	"publish" : {
+		"strategy" : "s3", 
+		"options" : {
+			"bucket" : "www.myblog.com",
+			"key" : "key",
+			"secret" : "secret",
+			"x-amz-acl": "public-read"
+		}
+	},
+
+	"plugins": {
+		"content_handler": "punch-blog-content-handler",
+
+		"helpers": {
+			"formatted_date": "./helpers/formatted_date_helper.js",	
+			"archive_helper": "./helpers/archive_helper.js",
+			"index_helper": "./helpers/index_helper.js",
+			"feed_helper": "./helpers/feed_helper.js",
+			"current_helper": "punch-current-page-helper",
+			"thirdparty_snippets_helper": "punch-thirdparty-snippets-helper"
+		},
+
+		"generator_hooks": {
+			"sitemap_generator_hook": "punch-sitemap-generator"
+		}
+
+	}
+}

@@ -1,0 +1,9 @@
+{ "name" : "laktek.com",
+	"version" : "1.0.0",
+	"dependencies" : {
+	 	"punch": ">= 0.5.0",
+	 	"punch-blog-content-handler": ">= 0.0.1",
+	 	"punch-current-page-helper": ">= 0.0.1",
+	 	"punch-thirdparty-snippets-helper": ">= 0.0.1"
+ 	} 
+}

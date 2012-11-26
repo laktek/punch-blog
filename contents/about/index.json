@@ -1,0 +1,13 @@
+{
+	"page-title": "About - Lakshan Perera (LakTEK)",
+	"title": "About",
+	"portrait": "/images/portrait.jpg",
+	"gravatar_url": "http://www.gravatar.com/avatar/78f629467a182fffdca5a327045fd362.png?size=128",
+	"elsewhere": [
+		{ "url": "http://twitter.com/laktek", "title": "Twitter", "desc": "Lifestream" },
+		{ "url": "http://github.com/laktek", "title": "GitHub", "desc": "Open Source Stuff" },
+		{ "url": "http://www.slideshare.net/laktek", "title": "Slideshare", "desc": "Presentations" },
+		{ "url": "https://picasaweb.google.com/100450686923601430268", "title": "Picasa", "desc": "Occasional Travel Albums" },
+		{ "url": "http://coderwall.com/laktek", "title": "Coderwall", "desc": "Nerd Badges" }
+	]
+}

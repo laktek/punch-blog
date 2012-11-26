@@ -1,0 +1,30 @@
+<div id="main-content" class="expanded">
+	<h2>Archive</h2> 
+
+		<h3>By Year</h3>
+
+		<ul class="filters"> 
+			{{#years}}
+				<li><a href="/{{.}}" class="{{#current}}{{.}}{{/current}}">{{.}}</a></li>
+			{{/years}}
+		</ul>
+
+		<h3>By Tag</h3>
+		<ul class="filters">
+			{{#top_tags}}
+				<li><a href="/tag/{{#downcase}}{{.}}{{/downcase}}"  class="{{#current}}/tag/{{#downcase}}{{.}}{{/downcase}}{{/current}}">{{.}}</a></li>
+			{{/top_tags}}
+		</ul>
+
+		<div class="posts" role="archive">
+			<ul>
+				{{#posts}}
+				<li>
+					<a href="{{ permalink }}">{{{ title }}}</a>
+					<time class="updated" datetime="{{ published_date }}" pubdate>{{#long_date}}{{published_date}}{{/long_date}}</time>
+				</li>
+				{{/posts}}
+			</ul>
+		</div>
+
+</div>

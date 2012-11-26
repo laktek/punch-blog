@@ -1,0 +1,28 @@
+<div id="main-content">
+	<article class="hentry"> 
+		<h2 class="entry-title">{{{ title }}}</h2>
+		<time class="updated" datetime="{{ published_date }}" pubdate>{{#long_date}}{{published_date}}{{/long_date}}</time>
+
+		<div class="entry-content">
+			{{{content}}}
+		</div>
+
+		<aside role="meta">
+			<div role="tags">
+				<span role="icon" aria-hidden="true" class="icon-tag"></span><span>Tags:</span></span>
+				{{#tags}}  
+					<a href="/tag/{{#downcase}}{{.}}{{/downcase}}">{{.}}</a>&nbsp;
+				{{/tags}} 
+			</div>
+
+			<div role="social_media">
+				{{{tweet_snippet}}}
+			</div>
+		</aside>
+
+		<div id="disqus_block">
+			{{{disqus_snippet}}}
+		</div>
+
+	</article>
+</div>
