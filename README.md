@@ -1,6 +1,6 @@
 # Punch Blog
 
-Blogging tool based on [Punch](http://laktek.githubc.com/punch).
+Blogging tool based on [Punch](http://laktek.github.com/punch).
 
 ## Features
 
