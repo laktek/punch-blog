@@ -4,6 +4,7 @@
 	 	"punch": ">= 0.5.0",
 	 	"punch-blog-content-handler": ">= 0.0.4",
 	 	"punch-current-page-helper": ">= 0.0.1",
-	 	"punch-thirdparty-snippets-helper": ">= 0.0.1"
+	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
+		"underscore": ">= 1.4.2"
  	} 
 }
