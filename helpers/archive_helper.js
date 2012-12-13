@@ -5,6 +5,19 @@ var blog_content_handler = require("punch-blog-content-handler");
 var all_posts = [];
 var last_modified = null;
 
+// TODO: This code is duplicated from punch-blog-content-handler.
+// Consider moving it to its own helper.
+var match_patterns = function(basepath, patterns) {
+	if (Array.isArray(patterns)) {
+		return _.any(patterns, function(pattern) {
+			return basepath.match(pattern) != null;
+		});
+	} else {
+		// assume a single pattern given and match directly
+		return basepath.match(patterns);
+	}
+};
+
 var fetch_all_posts = function(callback) {
 	//reset posts list
 	blog_content_handler.allPosts = {};
@@ -44,9 +57,17 @@ module.exports = {
 	get: function(basepath, file_extension, options, callback) {
 		var self = this;
 
-		fetch_all_posts(function() {
-			return callback(null, { "tag": tag_helpers }, {}, last_modified);
+		var archive_url_regexs = _.map(blog_content_handler.archiveUrls, function(url) {
+			return new RegExp("^" + url.pattern + "\\/index$", "g");
 		});
+
+		if (match_patterns(basepath, archive_url_regexs)) {
+			fetch_all_posts(function() {
+				return callback(null, { "tag": tag_helpers }, {}, last_modified);
+			});
+		} else {
+			return callback(null, {}, {}, null);
+		}
 	}
 
 }
