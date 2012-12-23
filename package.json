@@ -5,6 +5,7 @@
 	 	"punch-blog-content-handler": ">= 0.0.5",
 	 	"punch-current-page-helper": ">= 0.0.1",
 	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
+		"punch-sitemap-generator": ">= 0.0.3",
 		"underscore": ">= 1.4.2"
  	} 
 }
