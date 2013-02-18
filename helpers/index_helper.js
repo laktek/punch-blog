@@ -24,7 +24,7 @@ var fetch_content = function(callback) {
 
 			var fetch_full_posts = function() {
 				if (recent_posts_list.length) {
-					blog_content_handler.getPost(path.join(recent_posts_list.pop().permalink, "index"), function(err, post_contents, modified_date) {
+					blog_content_handler.getPost(path.join(recent_posts_list.shift().permalink, "index"), function(err, post_contents, modified_date) {
 						var post_paras = post_contents.content.replace(/\n/g, "").match(/(<p[^>]*>.*?<\/p>)/g);
 
 						if (teaser_length < 1) {
