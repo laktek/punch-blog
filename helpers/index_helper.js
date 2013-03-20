@@ -29,12 +29,11 @@ var fetch_content = function(callback) {
 
 						if (teaser_length < 1) {
 							paras_to_show = post_paras.length;
-							post_contents.is_teaser = false;
 						} else {
 							paras_to_show = teaser_length;
-							post_contents.is_teaser = true;
 						}
 
+						post_contents.is_teaser = (paras_to_show < post_paras.length);
 						post_contents.content = post_paras.slice(0, paras_to_show).join("");
 
 						if (!err) {
