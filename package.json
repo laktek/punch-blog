@@ -1,4 +1,4 @@
-{ "name" : "laktek.com",
+{ "name" : "punch-blog",
 	"version" : "1.0.0",
 	"dependencies" : {
 	 	"punch": ">= 0.5.0",
