@@ -2,6 +2,7 @@ var _ = require("underscore");
 var path = require("path");
 
 var helper_utils = require("punch").Utils.Helper;
+var path_utils = require("punch").Utils.Path;
 var blog_content_handler = require("punch-blog-content-handler");
 
 var homepage_posts = 10;
@@ -26,7 +27,7 @@ var fetch_content = function(callback) {
 				if (recent_posts_list.length) {
 					blog_content_handler.getPost(path.join(recent_posts_list.shift().permalink, "index"), function(err, post_contents, modified_date) {
 						var post_paras = post_contents.content.replace(/\n/g, " ").match(/(<p[^>]*>.*?<\/p>)/g);
-
+						
 						if (teaser_length < 1) {
 							paras_to_show = post_paras.length;
 						} else {
@@ -81,7 +82,7 @@ module.exports = {
 	get: function(basepath, file_extension, options, callback){
 		var self = this;
 
-		if (basepath !== "/index") {
+		if (!path_utils.matchPath(basepath, "^/index$")) {
 			return callback(null, {}, {}, null);
 		}
 
