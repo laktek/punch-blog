@@ -1,22 +1,10 @@
 var _ = require("underscore");
 var helper_utils = require("punch").Utils.Helper;
+var path_utils = require("punch").Utils.Path;
 var blog_content_handler = require("punch-blog-content-handler");
 
 var all_posts = [];
 var last_modified = null;
-
-// TODO: This code is duplicated from punch-blog-content-handler.
-// Consider moving it to its own helper.
-var match_patterns = function(basepath, patterns) {
-	if (Array.isArray(patterns)) {
-		return _.any(patterns, function(pattern) {
-			return basepath.match(pattern) != null;
-		});
-	} else {
-		// assume a single pattern given and match directly
-		return basepath.match(patterns);
-	}
-};
 
 var fetch_all_posts = function(callback) {
 	//reset posts list
@@ -61,7 +49,7 @@ module.exports = {
 			return new RegExp("^" + url.pattern + "\\/index$", "g");
 		});
 
-		if (match_patterns(basepath, archive_url_regexs)) {
+		if (path_utils.matchPath(basepath, archive_url_regexs)) {
 			fetch_all_posts(function() {
 				return callback(null, { "tag": tag_helpers }, {}, last_modified);
 			});
@@ -71,3 +59,4 @@ module.exports = {
 	}
 
 }
+

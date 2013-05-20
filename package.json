@@ -1,11 +1,11 @@
 { "name" : "laktek.com",
 	"version" : "1.0.0",
 	"dependencies" : {
-	 	"punch": ">= 0.5.0",
-	 	"punch-blog-content-handler": ">= 0.0.6",
+	 	"punch": ">= 0.5.28",
+	 	"punch-blog-content-handler": ">= 0.0.9",
 	 	"punch-current-page-helper": ">= 0.0.1",
 	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
-		"punch-sitemap-generator": ">= 0.0.3",
+		"punch-sitemap-generator": ">= 0.0.5",
 		"underscore": ">= 1.4.2"
  	} 
 }
