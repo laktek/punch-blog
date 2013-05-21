@@ -2,6 +2,7 @@ var _ = require("underscore");
 var path = require("path");
 
 var helper_utils = require("punch").Utils.Helper;
+var path_utils = require("punch").Utils.Path;
 var blog_content_handler = require("punch-blog-content-handler");
 
 var all_posts = [];
@@ -57,7 +58,7 @@ module.exports = {
 	get: function(basepath, file_extension, options, callback){
 		var self = this;
 
-		if (basepath !== "/feed") {
+		if (!path_utils.matchPath(basepath, "^/feed$")) {
 			return callback(null, {}, {}, null);
 		}
 
