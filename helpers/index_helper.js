@@ -21,7 +21,7 @@ var fetch_content = function(callback) {
 			var all_posts = _.values(posts_obj).reverse();
 			last_modified = posts_last_modified;
 
-			var recent_posts_list = all_posts.slice(all_posts.length - homepage_posts);
+			var recent_posts_list = all_posts.length > homepage_posts ? all_posts.slice(all_posts.length - homepage_posts) : all_posts;
 
 			var fetch_full_posts = function() {
 				if (recent_posts_list.length) {
