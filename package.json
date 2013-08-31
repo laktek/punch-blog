@@ -1,7 +1,7 @@
 { "name" : "punch-blog",
 	"version" : "1.0.0",
 	"dependencies" : {
-	 	"punch": ">= 0.5.28",
+	 	"punch": ">= 0.5.35",
 	 	"punch-blog-content-handler": ">= 0.0.9",
 	 	"punch-current-page-helper": ">= 0.0.1",
 	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
