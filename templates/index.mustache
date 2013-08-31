@@ -5,7 +5,7 @@
 			{{#recent_posts}}
       <article class="hentry"> 
         <h2 class="entry-title"><a href="{{ permalink }}">{{{ title }}}</a></h2>
-				<time class="updated" datetime="{{ published_date }}" pubdate>{{#long_date}}{{published_date}}{{/long_date}}</time>
+				<time class="updated" datetime="{{#iso_date}}{{ published_date }}{{/iso_date}}" pubdate>{{#long_date}}{{published_date}}{{/long_date}}</time>
 
         <div class="entry-content">
           {{{ content }}}
