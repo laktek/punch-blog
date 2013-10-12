@@ -16,9 +16,10 @@ var fetch_content = function(callback) {
 	//reset posts list
 	blog_content_handler.allPosts = {};
 
-	blog_content_handler.getAllPosts(function(err, posts_obj, posts_last_modified) {
+	blog_content_handler.getPosts('', function(err, posts_obj, posts_last_modified) {
 		if (!err) {
-			var all_posts = _.values(posts_obj).reverse();
+      var all_posts = posts_obj.posts;
+
 			last_modified = posts_last_modified;
 
 			var recent_posts_list = all_posts.length > homepage_posts ? all_posts.slice(all_posts.length - homepage_posts) : all_posts;
@@ -27,7 +28,7 @@ var fetch_content = function(callback) {
 				if (recent_posts_list.length) {
 					blog_content_handler.getPost(path.join(recent_posts_list.shift().permalink, "index"), function(err, post_contents, modified_date) {
 						var post_paras = post_contents.content.replace(/\n/g, " ").match(/(<p[^>]*>.*?<\/p>)/g);
-						
+
 						if (teaser_length < 1) {
 							paras_to_show = post_paras.length;
 						} else {
